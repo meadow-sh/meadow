@@ -64,3 +64,7 @@ into a specific file and then run certain prompts against it.
   insert into document. 
 - [ ] Eventually, I'd like to be able to use audio during the iterative phase of
   composing a document, rather than in only the generative phase.
+
+# Further Reading
+
+- [Language Model Sketchbook](https://maggieappleton.com/lm-sketchbook)
