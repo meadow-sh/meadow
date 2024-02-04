@@ -1,0 +1,127 @@
+
+***BEGIN ORIGINAL***
+
+All right, so in this session I'm going to do a preliminary spec out of OpenAI 
+proxy service. So what I need to do, what I need to think about right now is, 
+is what features, what problems, what features do I need, i.e. what problems do 
+I want to solve, and yeah, so what features do I need, what problems do I want 
+to solve, and then I need to think about like how much effort is it going to 
+require, and I need to think about is there some alternative configuration of 
+code and services or whatever that I could write that would, that would work 
+better. Okay, so the problem that I want to solve is visibility into our GPT 
+pipeline, our GPT bottlenecked, our GPT throughput, right. I want to be able to 
+look at our GPT throughput in terms of tokens per second completed. I want to 
+be able to see what kind of throughput we're getting. I want to see what kind 
+of throughput we're getting. That's the first requirement. So... Yeah. Yeah. 
+Um... Yeah. And... I want to be able to see that throughput because... Why? 
+Why? Well... Um... I guess the reason to see throughput is to... I don't, yeah, 
+I don't really know why. I guess, yeah, this is, it's like, do we really need 
+this? It's like... We run... The... We run an agent and we... Right? I mean, 
+it's like... It's like... It's really, really, what I want to be able to do 
+is... I guess, yeah, it just feels, it feels like a thing, right, when you 
+work, when you're working on, like, an ETL pipeline or, like, this data, you 
+know, this slow process, it's hard to not have a lot of visibility into why 
+
+***END ORIGINAL***
+
+
+***BEGIN INFLATION***
+
+During this session, I aim to conduct an initial specification of OpenAI proxy service. 
+
+Key considerations include identifying required features which are tied to the problems I aim to resolve. Further deliberation is needed regarding the effort these will necessitate, as well as the possible alternative ways to organize code and services to maximize efficiency and functionality.
+
+The primary issue at hand that I seek to resolve is improving transparency into our GPT pipeline, specifically GPT throughput. Essential to this is the capability to monitor our GPT throughput, measured in completed tokens per second. This will provide valuable insight into our system’s performance and efficiency.
+
+However, the necessity of this requirement needs further consideration. Given our existing system architecture where we operate an agent, it begs the question of relevancy and indispensability of this feature. Particularly for data and ETL pipelines where process speed may be slower, the question arises as to whether more visibility is indeed crucial.
+
+The answer to why we need to monitor throughput remains unclear but appears to rest upon possibly misplaced intuition rather than concrete necessity. In essence, the need for this requirement warrants further thought and discussion.
+
+***END INFLATION***
+
+
+***BEGIN PATCH***
+
+["Unexpressed hesitation and uncertain thought process", "The redundancy of discussing GPT throughput", "Lack of reasoning behind the need for visibility into throughput"]
+
+***END PATCH***
+
+
+***BEGIN ORIGINAL***
+
+things are being slow, right? So, you know, I want to understand... I want to 
+understand... So... Okay, let me back up, right? So, what I really want to 
+understand is our pipelines. What I really want to understand is our... What, 
+yeah, what I really want to understand is running a pipeline, running a 
+pipeline... What I really want to understand is our, the agent's knowledge 
+base. That's really what I want to understand, right? That's the real... That's 
+the real... Right? That's the real thing where... That I need to be able to 
+see, right? So, I guess the other thing is I need to be able to, like, you 
+know, if our agent is, you know, if our agent is, you know, I need to be able 
+to, like, you know, if our agent can be sped up, like, I want to see token 
+usage. I just don't... So, so... So, right? I mean, okay. So, let me just think 
+about it in time. So, what I'm talking about here is every request that we send 
+to OpenAI is reported. Every request we send to OpenAI, the usage is written to 
+a database, and that database can be queried, right? The usage is like, usage 
+is like, it's like, it's like tokens, number of tokens, model endpoint, used 
+at, or it's just written to a table. And we have a dashboard that shows our 
+usage. Right? And so, what I could, and then, and then we have a web UI that 
+just, that just reads from the database and shows recent usage. Recent usage. 
+Right? It shows usage per whatever. So, we just use some graphing library. That 
+seems straightforward. So, so, so, yeah. Okay. I don't know this. Maybe, right? 
+
+***END ORIGINAL***
+
+
+***BEGIN INFLATION***
+
+The primary objective is to gain a comprehensive understanding of our pipelines, particularly our agent's knowledge base. This information is key to being able to measure, monitor, and manage the applications and systems effectively.
+
+Routinely, we dispatch requests to OpenAI, and every one of these requests, along with their usage statistics, are systematically logged and stored in a database. These usage statistics typically include data about the tokens used, the model endpoint, and the time of usage.
+
+There is a variety of reasons this data is important. One such reason is if there were opportunities to accelerate our agent, these logs would enable us to see the token usage and evaluate where and how these improvements could be made.
+
+Additionally, we've built a dashboard which offers a vision of our recent usage. This user-friendly interface pool the data from the database, providing a visual representation of our usage metrics. By using an effective graphing library, the dashboard can display usage per variable tailored to our needs. A tool like this is straightforward yet impactful, providing valuable insights at a glance.
+
+On reflection, though the idea is apparent, the implementation still requires consideration. It is a question that necessitates further exploration and perhaps more dynamic solution development.
+
+***END INFLATION***
+
+
+***BEGIN PATCH***
+
+["Confusion and hesitancy of the speaker", "Intent to speed up the agent", "Need for a web user interface", "Uncertainty about the current understanding of the system"]
+
+***END PATCH***
+
+
+***BEGIN ORIGINAL***
+
+What's it going to get me, right? Am I, I think our agent, yeah, we just kind 
+of, yeah, I don't know. I think, I think, I think, yeah, we're getting, we're 
+definitely getting into, right? I just want to, what we're going to do is we 
+have to make sure that certain questions, like we just, I just want to, like, 
+yeah. Like, the parser's job, the thing is, yeah. So, yeah. I feel like I need 
+to dig into the parser, right? We need the bot to start getting smarter. So, I 
+think we're going to build, yeah. I think, I feel like a parser, okay. So, so, 
+there's two things that are a problem, right? One is latency. One is latency. 
+So, and the thing is, we could just, yeah.
+
+***END ORIGINAL***
+
+
+***BEGIN INFLATION***
+
+The key focus is to improve the functionality of our service. Of paramount importance is the need to construct more analytical algorithms that can efficiently parse and manage data. This will enhance the intelligence of the bot and improve its performance significantly. 
+
+Two main problems that need to be addressed are latency and throughput. Latency affects the system's responsiveness, hence, it is paramount to reduce it to acceptable levels. Throughput, on the other hand, impacts how much work the system can handle at any given time. Addressing these two issues will contribute to the construction of a more efficient and effective bot. Improving these metrics and getting the bot to start getting smarter are the main intentions moving forward.
+
+***END INFLATION***
+
+
+***BEGIN PATCH***
+
+["Unclear communication style and progression of thoughts.", "Multiple usage of filler words and phrases.", "Repetition of the term 'latency' as the only problem."]
+
+***END PATCH***
+

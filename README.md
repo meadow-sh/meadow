@@ -68,3 +68,22 @@ into a specific file and then run certain prompts against it.
 # Further Reading
 
 - [Language Model Sketchbook](https://maggieappleton.com/lm-sketchbook)
+
+# WIP Notes from 2024-02-03 Revamp
+
+- Went back to the bash-first approach. It actually feels kind of ok.
+- Didn't delete the go files yet, maybe I'll still use go for the CLI.
+- I got whisper working locally, seems promising.
+- I kind of (but also kind of not) expanded the scope. Instead of making this
+  project 100% about AI, the specific scope is stream-of-thought note-taking.
+  AI can help a lot, but I think there's lots of ways where non-agent AI can
+  help. This is a bit of a new train of thought. For example, if I'm sitting at
+  my desk reading, I can record an audio snippet, transcribe it, parse it for an
+  indication that I'm trying to figure something out or don't understand
+  something, and have a simple script that collects context from the web.
+- The last thing I did was get live transcription "working". It works in the
+  sense that the code runs and transcripts show up, but it looks like not
+  everything is getting transcribed and/or things get transcribed in a way that
+  makes it not obvious what's happening. __Good idea for next milestone:__ I
+  want the live transcription to be just good enough that I know that my audio
+  file was saved correctly.
